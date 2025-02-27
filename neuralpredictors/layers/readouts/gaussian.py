@@ -399,7 +399,7 @@ class FullGaussian2d(Readout):
             )
             # adaptive_neuron_reg_coefs (betas) are supposted to be from lognorm distribution
             coef_prior = 1 / (self.gamma_sigma**2) * ((torch.log(self.adaptive_neuron_reg_coefs.abs()) ** 2).sum())
-            return regularization_loss + coef_prior
+            return features_regularization + coef_prior
         else:
             return 0
 
